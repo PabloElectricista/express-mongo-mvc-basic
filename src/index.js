@@ -4,6 +4,10 @@ import connectToMongo from './config/mongo.js';
 
 app.listen(process.env.PORT || 0, async function() {
   console.log(`server running on http://localhost:${this.address().port}`)
-  await connectToMongo();
-  console.log("MongoDB connected");
+  try {
+    await connectToMongo();
+    console.log("MongoDB connected");
+  } catch (error) {
+    console.log(error.message);
+  }
 });
