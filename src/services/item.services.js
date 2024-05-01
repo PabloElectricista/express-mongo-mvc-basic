@@ -1,4 +1,4 @@
-import Item from "../models/Item.model.js";
+import Item from "../database/models/Item.model.js";
 
 const insertItem = async (item) => {
   return await Item.create(item);
